@@ -23,6 +23,8 @@
                 android:exported="false"
                 android:label="@string/title_activity_create_complaints"
                 android:theme="@style/Theme.ComplainantSystemApp" />
+
+        <!-- Add this activity and make it as main-->
         <activity
                 android:name=".LoginPage"
                 android:exported="true">

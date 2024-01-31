@@ -39,13 +39,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:background="#F07167"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="320dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="316dp"
             android:id="@+id/textInputLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:id="@+id/nameInput"
 
                 android:hint="Type your name here"
@@ -74,6 +74,8 @@
             android:layout_height="49dp"
             android:textColor="@color/white"
             android:id="@+id/send_data"
+            android:textSize="30sp"
+            android:background="@color/cerulean"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +87,9 @@
             android:layout_width="160dp"
             android:layout_height="49dp"
             android:textColor="@color/white"
+            android:background="@color/folly"
             android:id="@+id/back"
+            android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
