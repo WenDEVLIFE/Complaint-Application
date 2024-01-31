@@ -25,61 +25,60 @@ public class SignUp extends AppCompatActivity {
 
         final Button button = findViewById(R.id.button_register);
         button.setOnClickListener(v -> {
-            String email= String.valueOf(editText1.getText());
-            String password= String.valueOf(editText2.getText());
+            String email = String.valueOf(editText1.getText());
+            String password = String.valueOf(editText2.getText());
 
             // Check if email and password are not empty
-            if(email.isEmpty()) {
+            if (email.isEmpty()) {
                 editText1.setError("Email is required");
                 editText1.requestFocus();
-            } else if(password.isEmpty()) {
+            } else if (password.isEmpty()) {
                 editText2.setError("Password is required");
                 editText2.requestFocus();
             } else {
-                // Perform registration
-                if(password.length() < 8) {
+                // Check if the password has at least 8 characters
+                if (password.length() < 8) {
                     editText2.setError("Password must be at least 8 characters");
                     editText2.requestFocus();
                 } else {
-                    // Perform registration
-                    // See the createUserWithEmailAndPassword function of FirebaseAuth
-
-                    if (email.endsWith("@complaint.com")) {
-
-                        // Perform registration
-                      try {
-                          mAuth.createUserWithEmailAndPassword(email, password)
-                                  .addOnCompleteListener(this, task -> {
-                                      if (task.isSuccessful()) {
-                                          // User creation is successful
-                                          Log.d("FirebaseAuth", "createUserWithEmail:success");
-                                          FirebaseUser user = mAuth.getCurrentUser();
-                                          // You can do further actions here, such as updating UI or navigating to another activity
-
-                                          Toast.makeText(SignUp.this, "Registration successful", Toast.LENGTH_SHORT).show();
-
-                                          editText2.setText("");
-                                          editText1.setText("");
-
-                                      } else {
-                                          // If creation fails, display a message to the user.
-                                          Log.w("FirebaseAuth", "createUserWithEmail:failure", task.getException());
-                                          Toast.makeText(SignUp.this, "Authentication failed.",
-                                                  Toast.LENGTH_SHORT).show();
-                                      }
-                                  });
-
-                      } catch (IndexOutOfBoundsException e) {
-                         e.printStackTrace();
-                      }
+                    // Check if the password contains special characters and at least one uppercase letter
+                    if (!containsSpecialCharacter(password) || !containsUpperCase(password)) {
+                        editText2.setError("Password must contain at least one special character and one uppercase letter");
+                        editText2.requestFocus();
                     } else {
+                        // Perform registration
+                        if (email.endsWith("@complaint.com")) {
+                            try {
+                                mAuth.createUserWithEmailAndPassword(email, password)
+                                        .addOnCompleteListener(this, task -> {
+                                            if (task.isSuccessful()) {
+                                                // User creation is successful
+                                                Log.d("FirebaseAuth", "createUserWithEmail:success");
+                                                FirebaseUser user = mAuth.getCurrentUser();
+                                                // You can do further actions here, such as updating UI or navigating to another activity
 
-                        Toast.makeText(SignUp.this, "Please enter a valid email address like test@complaint.com", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(SignUp.this, "Registration successful", Toast.LENGTH_SHORT).show();
 
+                                                editText2.setText("");
+                                                editText1.setText("");
+
+                                            } else {
+                                                // If creation fails, display a message to the user.
+                                                Log.w("FirebaseAuth", "createUserWithEmail:failure", task.getException());
+                                                Toast.makeText(SignUp.this, "Authentication failed.",
+                                                        Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+                            } catch (IndexOutOfBoundsException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            Toast.makeText(SignUp.this, "Please enter a valid email address like test@complaint.com", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             }
-
         });
 
         final Button button2 = findViewById(R.id.buttonback);
@@ -101,5 +100,14 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
+    }
+    // Function to check if the password contains at least one special character
+    private boolean containsSpecialCharacter(String password) {
+        return !password.matches("[A-Za-z0-9 ]*");
+    }
+
+    // Function to check if the password contains at least one uppercase letter
+    private boolean containsUpperCase(String password) {
+        return !password.equals(password.toLowerCase());
     }
 }
