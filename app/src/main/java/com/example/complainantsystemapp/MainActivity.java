@@ -92,8 +92,9 @@ public class MainActivity extends AppCompatActivity implements  ComplaintAdapter
         fab.setOnClickListener(v -> {
 
             Intent intent = new Intent(MainActivity.this, CreateComplaint.class);
-            startActivity(intent);
             intent.putExtra("email", email);
+            startActivity(intent);
+            finish();
         });
     }
 

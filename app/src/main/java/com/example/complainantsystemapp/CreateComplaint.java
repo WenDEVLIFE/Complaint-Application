@@ -27,8 +27,10 @@ public class CreateComplaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_complaint);
 
-        Intent intent1 = getIntent();
-        String email = intent1.getStringExtra("email");
+
+        String email = getIntent().getStringExtra("email");
+
+        System.out.println("create complaint receive:"+email);
 
 
         // Get the Intent that started this activity and extract the string
@@ -86,8 +88,10 @@ public class CreateComplaint extends AppCompatActivity {
             // Code here executes on main thread after user presses button
             finish();
             Intent intent = new Intent(CreateComplaint.this, MainActivity.class);
-            startActivity(intent);
             intent.putExtra("email", email);
+            startActivity(intent);
+
+
 
         });
 
