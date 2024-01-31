@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements  ComplaintAdapter
 
             Intent intent = new Intent(MainActivity.this, CreateComplaint.class);
             startActivity(intent);
+            intent.putExtra("email", email);
         });
     }
 

@@ -27,6 +27,9 @@ public class CreateComplaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_complaint);
 
+        Intent intent1 = getIntent();
+        String email = intent1.getStringExtra("email");
+
 
         // Get the Intent that started this activity and extract the string
         textInputLayout = findViewById(R.id.textInputLayout1);
@@ -84,6 +87,8 @@ public class CreateComplaint extends AppCompatActivity {
             finish();
             Intent intent = new Intent(CreateComplaint.this, MainActivity.class);
             startActivity(intent);
+            intent.putExtra("email", email);
+
         });
 
     }
