@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements  ComplaintAdapter
                    FirebaseAuth.getInstance().signOut();
                    Intent intent = new Intent(MainActivity.this, LoginPage.class);
                    startActivity(intent);
+
+                   // finished the activity
                    finish();
 
                });
