@@ -4,6 +4,80 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#D62828"
         tools:context=".SignUp">
 
+    <TextView
+            android:text="Sign Up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:textSize="50sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+            android:layout_width="395dp"
+            android:layout_height="78dp"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/editTextTextEmailAddress2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:hint="Email"
+            android:textColor="@color/white"
+            android:layout_marginBottom="528dp" />
+
+    <EditText
+            android:layout_width="388dp"
+            android:layout_height="65dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:hint="Password"
+            android:textColor="@color/white"
+            android:id="@+id/editTextTextPassword2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="424dp"
+            app:layout_constraintHorizontal_bias="0.46" />
+
+    <Button
+            android:text="Sign Up"
+            android:layout_width="232dp"
+            android:layout_height="78dp"
+            android:id="@+id/button_register"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="232dp" />
+
+    <Button
+            android:text="Go Back"
+            android:layout_width="232dp"
+            android:layout_height="78dp"
+            android:id="@+id/buttonback"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="108dp" />
+
+    <CheckBox
+            android:text="See Password"
+            android:textColor="@color/white"
+            android:layout_width="197dp"
+            android:layout_height="54dp"
+            android:id="@+id/checkBox2"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.189"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="348dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

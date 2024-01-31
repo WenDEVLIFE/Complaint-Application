@@ -53,6 +53,12 @@ public class LoginPage extends AppCompatActivity {
                 Toast.makeText(LoginPage.this, "Please enter both email and password", Toast.LENGTH_SHORT).show();
             }
         });
+
+        final Button button2 = findViewById(R.id.buttonsign);
+        button2.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginPage.this, SignUp.class);
+            startActivity(intent);
+        });
         final CheckBox checkBox = findViewById(R.id.checkBox);
         checkBox.setOnClickListener(v -> {
             // Code here executes on main thread after user presses button
