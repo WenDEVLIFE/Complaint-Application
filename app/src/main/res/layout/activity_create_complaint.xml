@@ -4,6 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F07167"
         tools:context=".CreateComplaint">
 
     <!--multiline text input-->
@@ -14,6 +15,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="56dp"
+            android:textColorHint="@color/white"
+            android:background="@color/cardview_dark_background"
             android:id="@+id/textInputLayout1"
             android:layout_marginBottom="464dp">
 
@@ -21,7 +24,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Type your complaint here"
-                android:background="@null"
+                android:textColorHint="@color/white"
+                android:background="@color/cardview_dark_background"
                 android:inputType="textMultiLine"
                 android:minLines="5"
                 android:id="@+id/complaintInput"
@@ -31,7 +35,9 @@
     <com.google.android.material.textfield.TextInputLayout
             android:layout_width="319dp"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/cardview_dark_background"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="60dp"
             android:layout_marginBottom="320dp"
@@ -42,8 +48,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/nameInput"
 
-                android:hint="Type your complaint here"
-                android:background="@null"
+                android:hint="Type your name here"
+                android:textColorHint="@color/white"
+                android:background="@color/cardview_dark_background"
                 android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -52,6 +59,7 @@
             android:text="Complaint Section"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:id="@+id/Title"
             android:textSize="30sp"
             android:fontFamily="sans-serif-condensed"
@@ -64,6 +72,7 @@
             android:text="Send"
             android:layout_width="160dp"
             android:layout_height="49dp"
+            android:textColor="@color/white"
             android:id="@+id/send_data"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,6 +84,7 @@
             android:text="Go back "
             android:layout_width="160dp"
             android:layout_height="49dp"
+            android:textColor="@color/white"
             android:id="@+id/back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
