@@ -2,8 +2,6 @@ package com.example.complainantsystemapp;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +12,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.UUID;
 
 public class CreateComplaint extends AppCompatActivity {
    TextInputLayout textInputLayout;
@@ -38,49 +35,47 @@ public class CreateComplaint extends AppCompatActivity {
         textInputLayout1 = findViewById(R.id.textInputLayout2);
         complaintNameInput1 = textInputLayout1.findViewById(R.id.nameInput);
 
+        textInputLayout1 = findViewById(R.id.textInputLayout2);
+        complaintNameInput1 = textInputLayout1.findViewById(R.id.nameInput);
+
         final Button button = findViewById(R.id.send_data);
         button.setOnClickListener(v -> {
-            // Code here executes on main thread after user presses button
+            // Code here executes on the main thread after the user presses the button
             String complaintName = complaintNameInput1.getText().toString();
             String complaint = editText1.getText().toString();
 
-            if(complaintName.isEmpty() || complaintName.isEmpty()){
+            if (complaintName.isEmpty() || complaint.isEmpty()) {
                 complaintNameInput1.setError("Please enter your name");
                 complaintNameInput1.requestFocus();
                 return;
-            } else{
-                 if(complaintName.length() < 5){
-                    complaintNameInput1.setError("Name should be atleast 5 characters long");
+            } else {
+                if (complaintName.length() < 5) {
+                    complaintNameInput1.setError("Name should be at least 5 characters long");
                     complaintNameInput1.requestFocus();
-                    return; }
-                 else {
+                    return;
+                } else {
+                    try {
+                        AlertDialog alertDialog = new AlertDialog.Builder(CreateComplaint.this).create();
+                        alertDialog.setTitle("Firebase Message");
+                        alertDialog.setMessage("Data sent to Firebase");
+                        alertDialog.show();
 
-                     try {
-                         AlertDialog alertDialog = new AlertDialog.Builder(CreateComplaint.this).create();
-                            alertDialog.setTitle("FireBase Message");
-                            alertDialog.setMessage("Data sent to Firebase");
-                            alertDialog.show();
+                        // Generate a unique complaint ID using UUID
+                        String complaintId = UUID.randomUUID().toString();
 
+                        // Write the complaint data to the database under the generated complaint ID
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("complaints");
+                        myRef.child(complaintId).setValue(new Complaint(complaintId, complaintName, complaint));
 
-                         // Write a message to the database
-                         FirebaseDatabase database = FirebaseDatabase.getInstance();
-                         DatabaseReference myRef = database.getReference("complaints");
-
-                         myRef.child(complaintName).setValue(complaint);
-
-
-                         // clear the input fields
-                         complaintNameInput1.getText().clear();
-                         editText1.getText().clear();
-                     } catch (Exception e) {
-
-                         e.printStackTrace();
-                     }
-                 }
+                        // Clear the input fields
+                        complaintNameInput1.getText().clear();
+                        editText1.getText().clear();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-
-
-
         });
 
         final Button button1 = findViewById(R.id.back);

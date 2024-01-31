@@ -13,15 +13,18 @@
             android:theme="@style/Theme.ComplainantSystemApp"
             tools:targetApi="31">
         <activity
-                android:name=".CreateComplaint"
+                android:name=".SignUp"
                 android:exported="false" />
         <activity
-                android:name=".CreateComplaints"
+                android:name=".MainActivity"
+                android:exported="false" />
+        <activity
+                android:name=".CreateComplaint"
                 android:exported="false"
                 android:label="@string/title_activity_create_complaints"
                 android:theme="@style/Theme.ComplainantSystemApp" />
         <activity
-                android:name=".MainActivity"
+                android:name=".LoginPage"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

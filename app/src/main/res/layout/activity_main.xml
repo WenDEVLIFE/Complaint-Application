@@ -9,18 +9,33 @@
 
     <TextView
             android:text="Complaints"
-            android:layout_width="207dp"
-            android:layout_height="73dp"
+            android:layout_width="141dp"
+            android:layout_height="29dp"
             android:id="@+id/textView"
-            android:textSize="45sp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:fontFamily="sans-serif-condensed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.004"
-            app:layout_constraintHorizontal_bias="0.0" />
+            app:layout_constraintVertical_bias="0.066"
+            app:layout_constraintHorizontal_bias="0.059" />
+
+    <TextView
+            android:text="Email:"
+            android:layout_width="255dp"
+            android:layout_height="29dp"
+            android:id="@+id/email"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.008"
+            app:layout_constraintHorizontal_bias="0.059" />
 
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="392dp"
@@ -29,7 +44,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="4dp"
-            android:id="@+id/recyclerView" />
+            android:id="@+id/recyclerView"
+            app:layout_constraintHorizontal_bias="0.473" />
 
     <Button
             android:text="Logout"
