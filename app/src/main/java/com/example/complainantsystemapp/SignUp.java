@@ -58,6 +58,9 @@ public class SignUp extends AppCompatActivity {
 
                                           Toast.makeText(SignUp.this, "Registration successful", Toast.LENGTH_SHORT).show();
 
+                                          editText2.setText("");
+                                          editText1.setText("");
+
                                       } else {
                                           // If creation fails, display a message to the user.
                                           Log.w("FirebaseAuth", "createUserWithEmail:failure", task.getException());

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,9 +39,10 @@ public class MainActivity extends AppCompatActivity implements  ComplaintAdapter
 
         // Get the email of the logged in user from the intent extras
         String email = getIntent().getStringExtra("email");
+        String combine = "Welcome " + email;
 
         TextView textView = findViewById(R.id.email);
-        textView.setText("User:"+email);
+        textView.setText(combine);
 
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -56,22 +58,38 @@ public class MainActivity extends AppCompatActivity implements  ComplaintAdapter
 
         final Button button = findViewById(R.id.LogoutButton);
         button.setOnClickListener(v -> {
-            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Alert");
-            alertDialog.setMessage("Alert message to be shown");
-            alertDialog.show();
+           try {
+               AlertDialog.Builder builder = new AlertDialog.Builder(this);
+               builder.setTitle("Confirmation");
+               builder.setMessage("Are you sure you want to proceed?");
 
-            Intent intent = new Intent(MainActivity.this, LoginPage.class);
-            startActivity(intent);
-            finish();
+               // Add the Yes button
+               builder.setPositiveButton("Yes", (dialog, which) -> {
+                   // User clicked Yes, perform the action
+                   // Add your logic here
+
+                   FirebaseAuth.getInstance().signOut();
+                   Intent intent = new Intent(MainActivity.this, LoginPage.class);
+                   startActivity(intent);
+
+               });
+
+               // Add the No button
+               builder.setNegativeButton("No", (dialog, which) -> {
+                   // User clicked No, do nothing or handle accordingly
+               });
+
+               // Create and show the dialog
+               builder.create().show();
+           } catch (Exception e) {
+               e.printStackTrace();
+           }
+
+
         });
 
         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(v -> {
-            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Alert");
-            alertDialog.setMessage("Alert message for FloatingActionButton");
-            alertDialog.show();
 
             Intent intent = new Intent(MainActivity.this, CreateComplaint.class);
             startActivity(intent);
@@ -106,11 +124,21 @@ public class MainActivity extends AppCompatActivity implements  ComplaintAdapter
 
     @Override
     public void onDeleteClick(int position) {
-        if (position >= 0 && position < complaintList.size()) {
-            Complaint deletedComplaint = complaintList.remove(position);
-            deleteComplaintFromDatabase(deletedComplaint);
-            adapter.notifyItemRemoved(position);
-        }
+       // yes or no alert
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete Complaint");
+        builder.setMessage("Are you sure you want to delete this complaint?");
+        builder.setPositiveButton("Yes", (dialog, which) -> {
+            if (position >= 0 && position < complaintList.size()) {
+                Complaint deletedComplaint = complaintList.remove(position);
+                deleteComplaintFromDatabase(deletedComplaint);
+                adapter.notifyItemRemoved(position);
+            }
+        });
+        builder.setNegativeButton("No", (dialog, which) -> {
+            // Do nothing
+        });
+        builder.show();
     }
 
     private void deleteComplaintFromDatabase(Complaint deletedComplaint) {

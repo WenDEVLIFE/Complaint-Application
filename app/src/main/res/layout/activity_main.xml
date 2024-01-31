@@ -24,8 +24,8 @@
 
     <TextView
             android:text="Email:"
-            android:layout_width="255dp"
-            android:layout_height="29dp"
+            android:layout_width="402dp"
+            android:layout_height="27dp"
             android:id="@+id/email"
             android:textSize="20sp"
             android:textColor="@color/white"
