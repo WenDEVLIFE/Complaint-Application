@@ -4,28 +4,26 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F07167"
+        android:background="#3E6680"
         tools:context=".CreateComplaint">
 
     <!--multiline text input-->
 
     <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="319dp"
+            android:layout_width="@dimen/_239sdp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="56dp"
+            android:layout_marginEnd="60dp"
             android:textColorHint="@color/white"
-            android:background="#F07167"
             android:id="@+id/textInputLayout1"
-            android:layout_marginBottom="464dp">
+            android:layout_marginBottom="456dp">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Type your complaint here"
                 android:textColorHint="@color/white"
-                android:background="#F07167"
                 android:inputType="textMultiLine"
                 android:minLines="5"
                 android:id="@+id/complaintInput"
@@ -33,11 +31,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="319dp"
+            android:layout_width="@dimen/_239sdp"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="#F07167"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="52dp"
             android:layout_marginBottom="316dp"
@@ -47,10 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:id="@+id/nameInput"
-
                 android:hint="Type your name here"
                 android:textColorHint="@color/white"
-                android:background="#F07167"
                 android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -61,12 +56,13 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:id="@+id/Title"
-            android:textSize="30sp"
+            android:textSize="@dimen/_30sdp"
             android:fontFamily="sans-serif-condensed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.404" />
 
     <Button
             android:text="Send"
@@ -74,7 +70,7 @@
             android:layout_height="49dp"
             android:textColor="@color/white"
             android:id="@+id/send_data"
-            android:textSize="30sp"
+            android:textSize="@dimen/_20sdp"
             android:background="@color/cerulean"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +85,7 @@
             android:textColor="@color/white"
             android:background="@color/folly"
             android:id="@+id/back"
-            android:textSize="30sp"
+            android:textSize="@dimen/_20sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

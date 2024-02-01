@@ -48,7 +48,11 @@
     <Button
             android:id="@+id/deleteButton"
             android:layout_width="@dimen/_224sdp"
-            android:layout_height="@dimen/_49sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="@dimen/_20sdp"
+            android:textColor="@color/white"
+            android:background="@color/folly"
             android:text="Delete"
             android:onClick="onDeleteButtonClick"
             app:layout_constraintStart_toStartOf="parent"

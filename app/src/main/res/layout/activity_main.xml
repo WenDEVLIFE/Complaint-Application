@@ -27,7 +27,7 @@
             android:layout_width="@dimen/_200sdp"
             android:layout_height="@dimen/_32sdp"
             android:id="@+id/email"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_10sdp"
             android:textColor="@color/white"
             android:fontFamily="sans-serif-condensed"
             app:layout_constraintStart_toStartOf="parent"
