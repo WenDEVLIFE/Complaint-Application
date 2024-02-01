@@ -12,18 +12,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView4"
-            android:textSize="50sp"
+            android:textSize="@dimen/_30sdp"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.178"
-            app:layout_constraintHorizontal_bias="0.501" />
+            app:layout_constraintVertical_bias="0.134" />
 
     <EditText
-            android:layout_width="364dp"
-            android:layout_height="82dp"
+            android:layout_width="@dimen/_264sdp"
+            android:layout_height="@dimen/_62sdp"
             android:drawableLeft="@drawable/gmail"
             android:inputType="textEmailAddress"
             android:ems="10"
@@ -35,12 +34,12 @@
             android:hint="Email"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:layout_marginBottom="492dp"
-            app:layout_constraintHorizontal_bias="0.443" />
+            android:layout_marginBottom="476dp"
+            app:layout_constraintHorizontal_bias="0.468" />
 
     <EditText
-            android:layout_width="358dp"
-            android:layout_height="87dp"
+            android:layout_width="@dimen/_264sdp"
+            android:layout_height="@dimen/_62sdp"
             android:inputType="textPassword"
             android:ems="10"
             android:background="#F07167"
@@ -57,12 +56,12 @@
 
     <Button
             android:text="Sign Up"
-            android:layout_width="349dp"
-            android:layout_height="63dp"
+            android:layout_width="@dimen/_249sdp"
+            android:layout_height="@dimen/_53sdp"
             android:id="@+id/button_register"
             android:background="@color/cerulean"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="@dimen/_30sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -71,10 +70,10 @@
 
     <Button
             android:text="Go Back"
-            android:layout_width="348dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/_249sdp"
+            android:layout_height="@dimen/_53sdp"
             android:id="@+id/buttonback"
-            android:textSize="30sp"
+            android:textSize="@dimen/_30sdp"
             android:background="@color/folly"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,10 +85,10 @@
     <CheckBox
             android:text="See Password"
             android:textColor="@color/white"
-            android:layout_width="197dp"
-            android:layout_height="54dp"
+            android:layout_width="@dimen/_197sdp"
+            android:layout_height="@dimen/_54sdp"
             android:id="@+id/checkBox2"
-            android:textSize="20sp"
+            android:textSize="@dimen/_20sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.189"
@@ -97,13 +96,12 @@
             android:layout_marginBottom="284dp" />
 
     <ImageView
-            android:layout_width="93dp"
-            android:layout_height="81dp"
+            android:layout_width="@dimen/_53sdp"
+            android:layout_height="@dimen/_61sdp"
             app:srcCompat="@drawable/adduser_11695593"
             android:id="@+id/imageView2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="40dp"
-            app:layout_constraintHorizontal_bias="0.501" />
+            android:layout_marginTop="8dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

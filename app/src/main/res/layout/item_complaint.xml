@@ -11,7 +11,7 @@
             android:id="@+id/idTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="@dimen/_20sdp"
             android:textStyle="italic"
             android:textColor="@color/black"
             android:padding="8dp"
@@ -24,7 +24,7 @@
             android:id="@+id/complaintNameTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
+            android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:padding="8dp"
@@ -38,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="@dimen/_20sdp"
             android:padding="8dp"
             android:background="@color/black"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,11 +47,11 @@
 
     <Button
             android:id="@+id/deleteButton"
-            android:layout_width="224dp"
-            android:layout_height="49dp"
+            android:layout_width="@dimen/_224sdp"
+            android:layout_height="@dimen/_49sdp"
             android:text="Delete"
             android:onClick="onDeleteButtonClick"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/complaintTextView"
-            android:layout_marginStart="92dp" />
+            android:layout_marginStart="60dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
