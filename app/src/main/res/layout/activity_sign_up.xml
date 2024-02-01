@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/redwhite"
+        android:background="#3E6680"
         tools:context=".SignUp">
 
     <TextView
@@ -26,7 +26,6 @@
             android:drawableLeft="@drawable/gmail"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:background="#F07167"
             android:id="@+id/editTextTextEmailAddress2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +41,6 @@
             android:layout_height="@dimen/_62sdp"
             android:inputType="textPassword"
             android:ems="10"
-            android:background="#F07167"
             android:hint="Password"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
